@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beauty Product Finder</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>✨ Beauty Product Finder</h1>
+        <p>Discover your next favorite makeup & skincare!</p>
+    </header>
+
+    <div class="filters">
+        <div class="filter-group">
+            <label for="brand-filter">Brand:</label>
+            <select id="brand-filter">
+                <option value="all">All Brands</option>
+                <option value="maybelline">Maybelline</option>
+                <option value="loreal">L'Oréal</option>
+                <option value="mac">MAC</option>
+            </select>
+        </div>
+
+        <div class="filter-group">
+            <label for="category-filter">Category:</label>
+            <select id="category-filter">
+                <option value="all">All Categories</option>
+                <option value="makeup">Makeup</option>
+                <option value="skincare">Skincare</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="product-grid" id="product-container">
+        <!-- Products load here -->
+    </div>
+
+    <footer>
+        <p>© 2024 Beauty Product Finder</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

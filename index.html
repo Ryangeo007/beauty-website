@@ -1,46 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beauty Product Finder</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Maison Tint</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
 </head>
 <body>
-    <header>
-        <h1>✨ Beauty Product Finder</h1>
-        <p>Discover your next favorite makeup & skincare!</p>
-    </header>
+  <header>
+    <h1>Maison Tint</h1>
+    <nav>
+      <button onclick="filterCategory('all')">All</button>
+      <button onclick="filterCategory('makeup')">Makeup</button>
+      <button onclick="filterCategory('skincare')">Skincare</button>
+      <button onclick="filterCategory('haircare')">Haircare</button>
+    </nav>
+  </header>
 
-    <div class="filters">
-        <div class="filter-group">
-            <label for="brand-filter">Brand:</label>
-            <select id="brand-filter">
-                <option value="all">All Brands</option>
-                <option value="maybelline">Maybelline</option>
-                <option value="loreal">L'Oréal</option>
-                <option value="mac">MAC</option>
-            </select>
-        </div>
+  <section id="brand-filter">
+    <label for="brand-select">Filter by Brand:</label>
+    <select id="brand-select" onchange="filterBrand(this.value)">
+      <option value="all">All Brands</option>
+      <option value="dior">Dior</option>
+      <option value="chanel">Chanel</option>
+      <option value="fenty">Fenty Beauty</option>
+      <option value="theordinary">The Ordinary</option>
+      <option value="esteelauder">Estée Lauder</option>
+      <option value="ct">Charlotte Tilbury</option>
+    </select>
+  </section>
 
-        <div class="filter-group">
-            <label for="category-filter">Category:</label>
-            <select id="category-filter">
-                <option value="all">All Categories</option>
-                <option value="makeup">Makeup</option>
-                <option value="skincare">Skincare</option>
-            </select>
-        </div>
+  <main id="product-gallery">
+    <!-- Product cards -->
+    <div class="product-card" data-category="makeup" data-brand="fenty">
+      <img src="https://via.placeholder.com/200x200.png?text=Fenty+Gloss" alt="Fenty Gloss Bomb" />
+      <h3>Gloss Bomb</h3>
+      <p>Fenty Beauty</p>
+      <p>$19.99</p>
+      <p>⭐⭐⭐⭐☆</p>
+      <button>Add to Bag</button>
     </div>
 
-    <div class="product-grid" id="product-container">
-        <!-- Products load here -->
+    <div class="product-card" data-category="makeup" data-brand="dior">
+      <img src="https://via.placeholder.com/200x200.png?text=Dior+Lip+Oil" alt="Dior Lip Glow Oil" />
+      <h3>Lip Glow Oil</h3>
+      <p>Dior</p>
+      <p>$38.00</p>
+      <p>⭐⭐⭐⭐⭐</p>
+      <button>Add to Bag</button>
     </div>
 
-    <footer>
-        <p>© 2024 Beauty Product Finder</p>
-    </footer>
+    <div class="product-card" data-category="skincare" data-brand="theordinary">
+      <img src="https://via.placeholder.com/200x200.png?text=The+Ordinary+Niacinamide" alt="The Ordinary Niacinamide" />
+      <h3>Niacinamide 10%</h3>
+      <p>The Ordinary</p>
+      <p>$8.90</p>
+      <p>⭐⭐⭐⭐⭐</p>
+      <button>Add to Bag</button>
+    </div>
 
-    <script src="script.js"></script>
+    <div class="product-card" data-category="makeup" data-brand="ct">
+      <img src="https://via.placeholder.com/200x200.png?text=CT+Airbrush+Powder" alt="Charlotte Tilbury Powder" />
+      <h3>Airbrush Flawless Powder</h3>
+      <p>Charlotte Tilbury</p>
+      <p>$48.00</p>
+      <p>⭐⭐⭐⭐⭐</p>
+      <button>Add to Bag</button>
+    </div>
+
+    <div class="product-card" data-category="skincare" data-brand="esteelauder">
+      <img src="https://via.placeholder.com/200x200.png?text=Estee+Lauder+Serum" alt="Estee Lauder Serum" />
+      <h3>Advanced Night Repair</h3>
+      <p>Estée Lauder</p>
+      <p>$79.00</p>
+      <p>⭐⭐⭐⭐⭐</p>
+      <button>Add to Bag</button>
+    </div>
+
+    <div class="product-card" data-category="makeup" data-brand="chanel">
+      <img src="https://via.placeholder.com/200x200.png?text=Chanel+Foundation" alt="Chanel Foundation" />
+      <h3>Les Beiges Foundation</h3>
+      <p>Chanel</p>
+      <p>$65.00</p>
+      <p>⭐⭐⭐⭐☆</p>
+      <button>Add to Bag</button>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>

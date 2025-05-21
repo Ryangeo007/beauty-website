@@ -1,55 +1,69 @@
-<main id="product-gallery">
-  <div class="product-card" data-category="makeup" data-brand="dior">
-    <img src="https://www.sephora.com/productimages/sku/s2647477-main-zoom.jpg" alt="Dior Lip Glow Oil" />
-    <h3>Lip Glow Oil</h3>
-    <p>Dior</p>
-    <p>$40.00</p>
-    <p>⭐⭐⭐⭐⭐</p>
-    <button onclick="addToCart('Lip Glow Oil')">Add to Bag</button>
-  </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Maison Tint – Beauty & Skincare</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Maison Tint</h1>
+    <p>Curated luxury beauty & skincare</p>
+  </header>
 
-  <div class="product-card" data-category="makeup" data-brand="fenty">
-    <img src="https://www.sephora.com/productimages/sku/s2485808-main-zoom.jpg" alt="Fenty Gloss Bomb" />
-    <h3>Gloss Bomb Universal Lip Luminizer</h3>
-    <p>Fenty Beauty</p>
-    <p>$21.00</p>
-    <p>⭐⭐⭐⭐☆</p>
-    <button onclick="addToCart('Fenty Gloss Bomb')">Add to Bag</button>
-  </div>
+  <section id="search-bar">
+    <input
+      type="text"
+      id="searchInput"
+      placeholder="Search products..."
+      onkeyup="searchProducts()"
+    />
+  </section>
 
-  <div class="product-card" data-category="skincare" data-brand="theordinary">
-    <img src="https://www.sephora.com/productimages/sku/s2031296-main-zoom.jpg" alt="Niacinamide 10% + Zinc 1%" />
-    <h3>Niacinamide 10% + Zinc 1%</h3>
-    <p>The Ordinary</p>
-    <p>$7.10</p>
-    <p>⭐⭐⭐⭐⭐</p>
-    <button onclick="addToCart('Niacinamide 10% + Zinc 1%')">Add to Bag</button>
-  </div>
+  <section id="filters">
+    <select id="brand-filter" onchange="filterProducts()">
+      <option value="all">All Brands</option>
+      <option value="dior">Dior</option>
+      <option value="fenty">Fenty</option>
+      <option value="theordinary">The Ordinary</option>
+    </select>
+    <button onclick="showCart()">🛍️ View Bag</button>
+  </section>
 
-  <div class="product-card" data-category="makeup" data-brand="ct">
-    <img src="https://www.sephora.com/productimages/sku/s1862935-main-zoom.jpg" alt="Charlotte Tilbury Powder" />
-    <h3>Airbrush Flawless Finish Powder</h3>
-    <p>Charlotte Tilbury</p>
-    <p>$48.00</p>
-    <p>⭐⭐⭐⭐⭐</p>
-    <button onclick="addToCart('CT Airbrush Powder')">Add to Bag</button>
-  </div>
+  <main id="product-gallery">
+    <div class="product-card" data-category="makeup" data-brand="dior">
+      <img src="https://www.sephora.com/productimages/sku/s2647477-main-zoom.jpg" alt="Dior Lip Glow Oil" />
+      <h3>Lip Glow Oil</h3>
+      <p>Dior</p>
+      <p>$40.00</p>
+      <p>⭐⭐⭐⭐⭐</p>
+      <button onclick="addToCart('Lip Glow Oil')">Add to Bag</button>
+    </div>
 
-  <div class="product-card" data-category="skincare" data-brand="esteelauder">
-    <img src="https://www.sephora.com/productimages/sku/s2292004-main-zoom.jpg" alt="Estée Lauder Advanced Night Repair" />
-    <h3>Advanced Night Repair Serum</h3>
-    <p>Estée Lauder</p>
-    <p>$85.00</p>
-    <p>⭐⭐⭐⭐⭐</p>
-    <button onclick="addToCart('Advanced Night Repair Serum')">Add to Bag</button>
-  </div>
+    <div class="product-card" data-category="makeup" data-brand="fenty">
+      <img src="https://www.sephora.com/productimages/sku/s2485808-main-zoom.jpg" alt="Fenty Gloss Bomb" />
+      <h3>Gloss Bomb Universal Lip Luminizer</h3>
+      <p>Fenty Beauty</p>
+      <p>$21.00</p>
+      <p>⭐⭐⭐⭐☆</p>
+      <button onclick="addToCart('Fenty Gloss Bomb')">Add to Bag</button>
+    </div>
 
-  <div class="product-card" data-category="makeup" data-brand="chanel">
-    <img src="https://www.chanel.com/images//w_620/makeup-les-beiges-healthy-glow-foundation-hydration-and-longwear-B18875030-8825817577502.jpg" alt="Chanel Les Beiges Foundation" />
-    <h3>Les Beiges Healthy Glow Foundation</h3>
-    <p>Chanel</p>
-    <p>$70.00</p>
-    <p>⭐⭐⭐⭐☆</p>
-    <button onclick="addToCart('Chanel Les Beiges Foundation')">Add to Bag</button>
-  </div>
-</main>
+    <div class="product-card" data-category="skincare" data-brand="theordinary">
+      <img src="https://www.sephora.com/productimages/sku/s2031296-main-zoom.jpg" alt="Niacinamide 10% + Zinc 1%" />
+      <h3>Niacinamide 10% + Zinc 1%</h3>
+      <p>The Ordinary</p>
+      <p>$7.10</p>
+      <p>⭐⭐⭐⭐⭐</p>
+      <button onclick="addToCart('Niacinamide')">Add to Bag</button>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 Maison Tint. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
